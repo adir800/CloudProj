@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Tables</title>
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-car-alt"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Cars-IL <sup>2</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Home</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <!-- <h6 class="collapse-header">Login Screens:</h6>
+      <a class="collapse-item" href="login.html">Login</a>
+      <a class="collapse-item" href="register.html">Register</a>
+      <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+      <div class="collapse-divider"></div> -->
+            <h6 class="collapse-header">Pages:</h6>
+            <a class="collapse-item active" href="cars_2020.html">2020</a>
+            <a class="collapse-item active" href="cars_2019.html">2019</a>
+            <a class="collapse-item active" href="cars_2018.html">2018</a>
+            <a class="collapse-item active" href="cars_2017.html">2017</a>
+            <a class="collapse-item active" href="cars_2016.html">2016</a>
+            <a class="collapse-item active" href="cars_2015.html">2015</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">2016 Table</h1>
+          <p class="mb-4">2016 Cars table data</a>.</p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">2016</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>mispar_rechev</th>
+                      <th>tozeret_cd</th>
+                      <th>sug_degem</th>
+                      <th>tozeret_nm</th>
+                      <th>degem_cd date</th>
+                      <th>degem_nm</th>
+                      <th>ramat_gimur</th>
+                      <th>ramat_eivzur_betihuty</th>
+                      <th>kvutzat_zihum</th>
+                      <th>shnat_yitzur</th>
+                      <th>degem_manoa</th>
+                      <th>mivchan_acharon_dt</th>
+                      <th>tokef_dt</th>
+                      <th>baalut</th>
+                      <th>misgeret</th>
+                      <th>kinuy_mishari</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>mispar_rechev</th>
+                      <th>tozeret_cd</th>
+                      <th>sug_degem</th>
+                      <th>tozeret_nm</th>
+                      <th>degem_cd date</th>
+                      <th>degem_nm</th>
+                      <th>ramat_gimur</th>
+                      <th>ramat_eivzur_betihuty</th>
+                      <th>kvutzat_zihum</th>
+                      <th>shnat_yitzur</th>
+                      <th>degem_manoa</th>
+                      <th>mivchan_acharon_dt</th>
+                      <th>tokef_dt</th>
+                      <th>baalut</th>
+                      <th>misgeret</th>
+                      <th>kinuy_mishari</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <!-- <iframe width="700" height="400" src="https://data.gov.il/dataset/private-and-commercial-vehicles/resource/053cea08-09bc-40ec-8f7a-156f0677aff3/view/6e5c660c-9103-4297-a6f6-33824258da50" frameBorder="0"></iframe> -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="db/CarsDb_2016.js"></script>
+
+  <script>
+    //alert(CarsDb_2019.db_data[0].mispar_rechev);
+    var table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+
+    for (var i = 0; i < CarsDb_2016.db_data.length; i++) {
+      var row = table.insertRow(table.rows.length);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(4);
+      var cell6 = row.insertCell(5);
+      var cell7 = row.insertCell(6);
+      var cell8 = row.insertCell(7);
+      var cell9 = row.insertCell(8);
+      var cell10 = row.insertCell(9);
+      var cell11 = row.insertCell(10);
+      var cell12 = row.insertCell(11);
+      var cell13 = row.insertCell(12);
+      var cell14 = row.insertCell(13);
+      var cell15 = row.insertCell(14);
+      var cell16 = row.insertCell(15);
+
+      var newText = document.createTextNode(CarsDb_2016.db_data[i].mispar_rechev);
+      cell1.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].tozeret_cd);
+      cell2.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].sug_degem);
+      cell3.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].tozeret_nm);
+      cell4.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].degem_cd);
+      cell5.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].degem_nm);
+      cell6.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].ramat_gimur);
+      cell7.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].ramat_eivzur_betihuty);
+      cell8.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].kvutzat_zihum);
+      cell9.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].shnat_yitzur);
+      cell10.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].degem_manoa);
+      cell11.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].mivchan_acharon_dt);
+      cell12.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].tokef_dt);
+      cell13.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].baalut);
+      cell14.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].misgeret);
+      cell15.appendChild(newText);
+      newText = document.createTextNode(CarsDb_2016.db_data[i].kinuy_mishari);
+      cell16.appendChild(newText);
+    }
+    // }
+  </script>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
+
+
+
+</body>
+
+</html>
