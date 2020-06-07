@@ -114,61 +114,62 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">2019 Table</h1>
-          <p class="mb-4">2019 Cars table data</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Charts</h1>
+          <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme. The charts
+            below have been customized - for further customization options, please visit the <a target="_blank"
+              href="https://www.chartjs.org/docs/latest/">official Chart.js documentation</a>.</p>
 
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+          <!-- Content Row -->
+          <div class="row">
+
+            <div class="col-xl-8 col-lg-7">
+
+              <!-- Area Chart -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                  <hr>
+                  Styling for the area chart can be found in the <code>/js/demo/chart-area-demo.js</code> file.
+                </div>
+              </div>
+
+              <!-- Bar Chart -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-bar">
+                    <canvas id="myBarChart"></canvas>
+                  </div>
+                  <hr>
+                  Styling for the bar chart can be found in the <code>/js/demo/chart-bar-demo.js</code> file.
+                </div>
+              </div>
+
             </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>mispar_rechev</th>
-                      <th>tozeret_cd</th>
-                      <th>sug_degem</th>
-                      <th>tozeret_nm</th>
-                      <th>degem_cd date</th>
-                      <th>degem_nm</th>
-                      <th>ramat_gimur</th>
-                      <th>ramat_eivzur_betihuty</th>
-                      <th>kvutzat_zihum</th>
-                      <th>shnat_yitzur</th>
-                      <th>degem_manoa</th>
-                      <th>mivchan_acharon_dt</th>
-                      <th>tokef_dt</th>
-                      <th>baalut</th>
-                      <th>misgeret</th>
-                      <th>kinuy_mishari</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>mispar_rechev</th>
-                      <th>tozeret_cd</th>
-                      <th>sug_degem</th>
-                      <th>tozeret_nm</th>
-                      <th>degem_cd date</th>
-                      <th>degem_nm</th>
-                      <th>ramat_gimur</th>
-                      <th>ramat_eivzur_betihuty</th>
-                      <th>kvutzat_zihum</th>
-                      <th>shnat_yitzur</th>
-                      <th>degem_manoa</th>
-                      <th>mivchan_acharon_dt</th>
-                      <th>tokef_dt</th>
-                      <th>baalut</th>
-                      <th>misgeret</th>
-                      <th>kinuy_mishari</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <!-- <iframe width="700" height="400" src="https://data.gov.il/dataset/private-and-commercial-vehicles/resource/053cea08-09bc-40ec-8f7a-156f0677aff3/view/6e5c660c-9103-4297-a6f6-33824258da50" frameBorder="0"></iframe> -->
-                  </tbody>
-                </table>
+
+            <!-- Donut Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <hr>
+                  <!-- Styling for the donut chart can be found in the <code>/js/demo/chart-pie-demo.js</code> file. -->
+
+                </div>
               </div>
             </div>
           </div>
@@ -183,7 +184,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Adir And Asaf 2020</span>
           </div>
         </div>
       </footer>
@@ -220,67 +221,6 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="db/CarsDb_2019.js"></script>
-
-  <script>
-    //alert(CarsDb_2019.db_data[0].mispar_rechev);
-    var table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
-
-    for (var i = 0; i < CarsDb_2019.db_data.length; i++) {
-      var row = table.insertRow(table.rows.length);
-      var cell1 = row.insertCell(0);
-      var cell2 = row.insertCell(1);
-      var cell3 = row.insertCell(2);
-      var cell4 = row.insertCell(3);
-      var cell5 = row.insertCell(4);
-      var cell6 = row.insertCell(5);
-      var cell7 = row.insertCell(6);
-      var cell8 = row.insertCell(7);
-      var cell9 = row.insertCell(8);
-      var cell10 = row.insertCell(9);
-      var cell11 = row.insertCell(10);
-      var cell12 = row.insertCell(11);
-      var cell13 = row.insertCell(12);
-      var cell14 = row.insertCell(13);
-      var cell15 = row.insertCell(14);
-      var cell16 = row.insertCell(15);
-
-      var newText = document.createTextNode(CarsDb_2019.db_data[i].mispar_rechev);
-      cell1.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].tozeret_cd);
-      cell2.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].sug_degem);
-      cell3.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].tozeret_nm);
-      cell4.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].degem_cd);
-      cell5.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].degem_nm);
-      cell6.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].ramat_gimur);
-      cell7.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].ramat_eivzur_betihuty);
-      cell8.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].kvutzat_zihum);
-      cell9.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].shnat_yitzur);
-      cell10.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].degem_manoa);
-      cell11.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].mivchan_acharon_dt);
-      cell12.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].tokef_dt);
-      cell13.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].baalut);
-      cell14.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].misgeret);
-      cell15.appendChild(newText);
-      newText = document.createTextNode(CarsDb_2019.db_data[i].kinuy_mishari);
-      cell16.appendChild(newText);
-    }
-    // }
-  </script>
-
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -292,13 +232,36 @@
   <script src="js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+  <!-- <script src="js/demo/chart-pie-demo.js"></script> -->
+  <script src="js/demo/chart-bar-demo.js"></script>
 
+  <script type="text/javascript" src="db/CarsDb_2019.js"></script>
 
+  <script src="js/chart-pie-func.js"></script>
+
+  <script>
+    var carsType = [];
+    var carsTypeSize = [];
+    for (var i = 0; i < CarsDb_2019.db_data.length; i++) {
+      var isExist = false;
+      for (var j = 0; j < carsType.length; j++) {
+        if (carsType[j] == CarsDb_2019.db_data[i].tozeret_nm) {
+          isExist = true;
+          carsTypeSize[j]++;
+        }
+      }
+      if (isExist == false) {
+        carsType.push(CarsDb_2019.db_data[i].tozeret_nm);
+        carsTypeSize.push(1);
+      }
+    }
+
+    setPieChart(carsType, carsTypeSize);
+  </script>
 
 </body>
 

@@ -104,7 +104,7 @@
 
       <!-- Main Content -->
       <div id="content">
-        
+
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
         </nav>
@@ -115,7 +115,9 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-          <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme. The charts below have been customized - for further customization options, please visit the <a target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js documentation</a>.</p>
+          <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme. The charts
+            below have been customized - for further customization options, please visit the <a target="_blank"
+              href="https://www.chartjs.org/docs/latest/">official Chart.js documentation</a>.</p>
 
           <!-- Content Row -->
           <div class="row">
@@ -165,7 +167,8 @@
                     <canvas id="myPieChart"></canvas>
                   </div>
                   <hr>
-                  Styling for the donut chart can be found in the <code>/js/demo/chart-pie-demo.js</code> file.
+                  <!-- Styling for the donut chart can be found in the <code>/js/demo/chart-pie-demo.js</code> file. -->
+
                 </div>
               </div>
             </div>
@@ -199,7 +202,8 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -232,8 +236,219 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
+  <!-- <script src="js/demo/chart-pie-demo.js"></script> -->
   <script src="js/demo/chart-bar-demo.js"></script>
+
+  <script type="text/javascript" src="db/CarsDb_2020.js"></script>
+
+  <script>
+    var carsType = [];
+    var carsTypeSize = [];
+    for (var i = 0; i < CarsDb_2020.db_data.length; i++) {
+      var isExist = false;
+      for (var j = 0; j < carsType.length; j++) {
+        if (carsType[j] == CarsDb_2020.db_data[i].tozeret_nm) {
+          isExist = true;
+          carsTypeSize[j]++;
+        }
+      }
+      if (isExist == false) {
+        carsType.push(CarsDb_2020.db_data[i].tozeret_nm);
+        carsTypeSize.push(1);
+      }
+    }
+
+    // var char_colors = [];
+    // for(var i = 0; i<carsType.length; i++) {
+    //   var bgcolorValue = padHex() + bgcolor.toString(16)  + padHex() + bgcolor.toString(16) + "ff"; 
+    //   char_colors.push(bgcolorValue);
+    // }
+    const CSS_COLOR_NAMES = [
+  "AliceBlue",
+  "AntiqueWhite",
+  "Aqua",
+  "Aquamarine",
+  "Azure",
+  "Beige",
+  "Bisque",
+  "Black",
+  "BlanchedAlmond",
+  "Blue",
+  "BlueViolet",
+  "Brown",
+  "BurlyWood",
+  "CadetBlue",
+  "Chartreuse",
+  "Chocolate",
+  "Coral",
+  "CornflowerBlue",
+  "Cornsilk",
+  "Crimson",
+  "Cyan",
+  "DarkBlue",
+  "DarkCyan",
+  "DarkGoldenRod",
+  "DarkGray",
+  "DarkGrey",
+  "DarkGreen",
+  "DarkKhaki",
+  "DarkMagenta",
+  "DarkOliveGreen",
+  "DarkOrange",
+  "DarkOrchid",
+  "DarkRed",
+  "DarkSalmon",
+  "DarkSeaGreen",
+  "DarkSlateBlue",
+  "DarkSlateGray",
+  "DarkSlateGrey",
+  "DarkTurquoise",
+  "DarkViolet",
+  "DeepPink",
+  "DeepSkyBlue",
+  "DimGray",
+  "DimGrey",
+  "DodgerBlue",
+  "FireBrick",
+  "FloralWhite",
+  "ForestGreen",
+  "Fuchsia",
+  "Gainsboro",
+  "GhostWhite",
+  "Gold",
+  "GoldenRod",
+  "Gray",
+  "Grey",
+  "Green",
+  "GreenYellow",
+  "HoneyDew",
+  "HotPink",
+  "IndianRed",
+  "Indigo",
+  "Ivory",
+  "Khaki",
+  "Lavender",
+  "LavenderBlush",
+  "LawnGreen",
+  "LemonChiffon",
+  "LightBlue",
+  "LightCoral",
+  "LightCyan",
+  "LightGoldenRodYellow",
+  "LightGray",
+  "LightGrey",
+  "LightGreen",
+  "LightPink",
+  "LightSalmon",
+  "LightSeaGreen",
+  "LightSkyBlue",
+  "LightSlateGray",
+  "LightSlateGrey",
+  "LightSteelBlue",
+  "LightYellow",
+  "Lime",
+  "LimeGreen",
+  "Linen",
+  "Magenta",
+  "Maroon",
+  "MediumAquaMarine",
+  "MediumBlue",
+  "MediumOrchid",
+  "MediumPurple",
+  "MediumSeaGreen",
+  "MediumSlateBlue",
+  "MediumSpringGreen",
+  "MediumTurquoise",
+  "MediumVioletRed",
+  "MidnightBlue",
+  "MintCream",
+  "MistyRose",
+  "Moccasin",
+  "NavajoWhite",
+  "Navy",
+  "OldLace",
+  "Olive",
+  "OliveDrab",
+  "Orange",
+  "OrangeRed",
+  "Orchid",
+  "PaleGoldenRod",
+  "PaleGreen",
+  "PaleTurquoise",
+  "PaleVioletRed",
+  "PapayaWhip",
+  "PeachPuff",
+  "Peru",
+  "Pink",
+  "Plum",
+  "PowderBlue",
+  "Purple",
+  "RebeccaPurple",
+  "Red",
+  "RosyBrown",
+  "RoyalBlue",
+  "SaddleBrown",
+  "Salmon",
+  "SandyBrown",
+  "SeaGreen",
+  "SeaShell",
+  "Sienna",
+  "Silver",
+  "SkyBlue",
+  "SlateBlue",
+  "SlateGray",
+  "SlateGrey",
+  "Snow",
+  "SpringGreen",
+  "SteelBlue",
+  "Tan",
+  "Teal",
+  "Thistle",
+  "Tomato",
+  "Turquoise",
+  "Violet",
+  "Wheat",
+  "White",
+  "WhiteSmoke",
+  "Yellow",
+  "YellowGreen",
+];
+    var ctx = document.getElementById("myPieChart");
+    var pie_chart_js = {
+      type: 'doughnut',
+      data: {
+        labels: ["Direct", "Referral", "Social"],
+        datasets: [{
+          data: [55, 30, 15],
+          backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+          hoverBorderColor: "rgba(234, 236, 244, 1)",
+        }],
+      },
+      options: {
+        maintainAspectRatio: false,
+        tooltips: {
+          backgroundColor: "rgb(255,255,255)",
+          bodyFontColor: "#858796",
+          borderColor: '#dddfeb',
+          borderWidth: 1,
+          xPadding: 15,
+          yPadding: 15,
+          displayColors: false,
+          caretPadding: 10,
+        },
+        legend: {
+          display: false
+        },
+        cutoutPercentage: 80,
+      },
+    };
+    pie_chart_js.data.labels = carsType;
+    pie_chart_js.data.datasets[0].data = carsTypeSize;
+    pie_chart_js.data.datasets[0].backgroundColor = CSS_COLOR_NAMES;
+
+    var myPieChart = new Chart(ctx, pie_chart_js);
+  </script>
 
 </body>
 
