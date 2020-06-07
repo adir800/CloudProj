@@ -137,7 +137,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">2019 Charts</h1>
+          <h1 class="h3 mb-2 text-gray-800">2017 Charts</h1>
 
 
           <!-- Content Row -->
@@ -230,23 +230,23 @@
   <!-- <script src="js/demo/chart-pie-demo.js"></script> -->
   <!-- <script src="js/demo/chart-bar-demo.js"></script> -->
 
-  <script type="text/javascript" src="db/CarsDb_2019.js"></script>
+  <script type="text/javascript" src="db/CarsDb_2017.js"></script>
 
   <script src="js/chart-pie-func.js"></script>
 
   <script>
     var carsType = [];
     var carsTypeSize = [];
-    for (var i = 0; i < CarsDb_2019.db_data.length; i++) {
+    for (var i = 0; i < CarsDb_2017.db_data.length; i++) {
       var isExist = false;
       for (var j = 0; j < carsType.length; j++) {
-        if (carsType[j] == CarsDb_2019.db_data[i].tozeret_nm) {
+        if (carsType[j] == CarsDb_2017.db_data[i].tozeret_nm) {
           isExist = true;
           carsTypeSize[j]++;
         }
       }
       if (isExist == false) {
-        carsType.push(CarsDb_2019.db_data[i].tozeret_nm);
+        carsType.push(CarsDb_2017.db_data[i].tozeret_nm);
         carsTypeSize.push(1);
       }
     }
