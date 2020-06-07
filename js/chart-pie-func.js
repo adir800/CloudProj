@@ -183,7 +183,7 @@ var pie_chart_js = {
     legend: {
       display: false
     },
-    cutoutPercentage: 80,
+    cutoutPercentage: 60,
   },
 }
 

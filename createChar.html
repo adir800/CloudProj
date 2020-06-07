@@ -9,14 +9,19 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CreateChart</title>
+  <title>SB Admin 2 - Tables</title>
 
-  <!-- Custom fonts for this template-->
+  <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -63,9 +68,29 @@
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
+            <!-- <h6 class="collapse-header">Login Screens:</h6>
+      <a class="collapse-item" href="login.html">Login</a>
+      <a class="collapse-item" href="register.html">Register</a>
+      <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+      <div class="collapse-divider"></div> -->
             <h6 class="collapse-header">Years:</h6>
             <a class="collapse-item active" href="cars_2020.html">2020</a>
             <a class="collapse-item active" href="cars_2019.html">2019</a>
+          </div>
+        </div>
+      </li>
+      <!-- Charts Side bar Folders -->
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true"
+          aria-controls="collapsePages1">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span>
+        </a>
+        <div id="collapsePages1" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Charts:</h6>
+            <a class="collapse-item active" href="charts_2020.html">2020</a>
+            <a class="collapse-item active" href="charts_2019.html">2019</a>
           </div>
         </div>
       </li>
@@ -97,54 +122,218 @@
 
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+        </nav>
+        <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Create Charts</h1>
+          <h1 class="h3 mb-2 text-gray-800">Car Years Chart</h1>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <div class="col-xl-8 col-lg-7">
+              <br>
+              <div id="container"></div>
+              <br>
+              <div>
+                <button id="generate">Create Chart</button>
+              </div>
+              <br>
+              <!-- <p id="car">Your Cars:</p> -->
+
+              <!-- Bar Chart -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                </div>
+                <div class="card-body">
+                  <div id="chartContainer" class="chart-bar">
+                    <canvas id="myBarChart"></canvas>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- /.container-fluid -->
 
         </div>
-        <!-- /.container-fluid -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; Adir And Asaf 2020</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
 
       </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Adir And Asaf 2020</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+      <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <!-- <script src="js/demo/chart-area-demo.js"></script> -->
+    <!-- <script src="js/demo/chart-pie-demo.js"></script> -->
+    <!-- <script src="js/demo/chart-bar-demo.js"></script> -->
+
+    <script type="text/javascript" src="db/CarsDb_2020.js"></script>
+    <script type="text/javascript" src="db/CarsDb_2019.js"></script>
+    <script type="text/javascript" src="db/CarsDb_2018.js"></script>
+    <script type="text/javascript" src="db/CarsDb_2017.js"></script>
+    <script type="text/javascript" src="db/CarsDb_2016.js"></script>
+    <script type="text/javascript" src="db/CarsDb_2015.js"></script>
+
+    <script src="js/chart-bar-func.js"></script>
+
+    <script>
+      var carsType = [];
+      var carsTypeSize = [];
+      for (var i = 0; i < CarsDb_2019.db_data.length; i++) {
+        var isExist = false;
+        for (var j = 0; j < carsType.length; j++) {
+          if (carsType[j] == CarsDb_2019.db_data[i].tozeret_nm) {
+            isExist = true;
+            carsTypeSize[j]++;
+          }
+        }
+        if (isExist == false) {
+          carsType.push(CarsDb_2019.db_data[i].tozeret_nm);
+          carsTypeSize.push(1);
+        }
+      }
+
+      var values = carsType;
+
+      var select = document.createElement("select");
+      select.name = "Cars";
+      select.id = "cars"
+
+      for (const val of values) {
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        select.appendChild(option);
+      }
+
+      var label = document.createElement("label");
+      label.innerHTML = "Choose car manufacturer: "
+      label.htmlFor = "cars";
+
+      document.getElementById("container").appendChild(label).appendChild(select);
+
+      document.getElementById('generate').onclick = function () {
+        var e = document.getElementById("cars");
+        var strUser = e.options[e.selectedIndex].text;
+        // document.getElementById('car').innerHTML = strUser;
+
+        var car_cnt_array = [];
+
+        var car_cnt = 0;
+        for (var i = 0; i < CarsDb_2020.db_data.length; i++) {
+          if(CarsDb_2020.db_data[i].tozeret_nm == strUser) {
+            car_cnt++;
+          }
+        }
+        car_cnt_array.push(car_cnt);
+
+        car_cnt = 0;
+        for (var i = 0; i < CarsDb_2019.db_data.length; i++) {
+          if(CarsDb_2019.db_data[i].tozeret_nm == strUser) {
+            car_cnt++;
+          }
+        }
+        car_cnt_array.push(car_cnt);
+
+        car_cnt = 0;
+        for (var i = 0; i < CarsDb_2018.db_data.length; i++) {
+          if(CarsDb_2018.db_data[i].tozeret_nm == strUser) {
+            car_cnt++;
+          }
+        }
+        car_cnt_array.push(car_cnt);
+
+        car_cnt = 0;
+        for (var i = 0; i < CarsDb_2017.db_data.length; i++) {
+          if(CarsDb_2017.db_data[i].tozeret_nm == strUser) {
+            car_cnt++;
+          }
+        }
+        car_cnt_array.push(car_cnt);
+
+        car_cnt = 0;
+        for (var i = 0; i < CarsDb_2016.db_data.length; i++) {
+          if(CarsDb_2016.db_data[i].tozeret_nm == strUser) {
+            car_cnt++;
+          }
+        }
+        car_cnt_array.push(car_cnt);
+
+        car_cnt = 0;
+        for (var i = 0; i < CarsDb_2015.db_data.length; i++) {
+          if(CarsDb_2015.db_data[i].tozeret_nm == strUser) {
+            car_cnt++;
+          }
+        }
+        car_cnt_array.push(car_cnt);
+
+        var ctx = document.getElementById("myBarChart");
+        ctx.remove();
+        document.getElementById("chartContainer").innerHTML = '<canvas id="myBarChart"></canvas>';
+        setBarChart(car_cnt_array);
+        // document.getElementById('car').innerHTML = car_cnt;
+
+      }
+
+
+    </script>
 
 </body>
 
