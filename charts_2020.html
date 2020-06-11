@@ -66,7 +66,7 @@
           <i class="fas fa-fw fa-folder"></i>
           <span>Years</span>
         </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <!-- <h6 class="collapse-header">Login Screens:</h6>
       <a class="collapse-item" href="login.html">Login</a>
@@ -76,15 +76,38 @@
             <h6 class="collapse-header">Years:</h6>
             <a class="collapse-item active" href="cars_2020.html">2020</a>
             <a class="collapse-item active" href="cars_2019.html">2019</a>
+            <a class="collapse-item active" href="cars_2018.html">2018</a>
+            <a class="collapse-item active" href="cars_2017.html">2017</a>
+            <a class="collapse-item active" href="cars_2016.html">2016</a>
+            <a class="collapse-item active" href="cars_2015.html">2015</a>
+          </div>
+        </div>
+      </li>
+<!-- Charts Side bar Folders -->
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true"
+          aria-controls="collapsePages1">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span>
+        </a>
+        <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Charts:</h6>
+            <a class="collapse-item active" href="charts_2020.html">2020</a>
+            <a class="collapse-item active" href="charts_2019.html">2019</a>
+            <a class="collapse-item active" href="charts_2018.html">2018</a>
+            <a class="collapse-item active" href="charts_2017.html">2017</a>
+            <a class="collapse-item active" href="charts_2016.html">2016</a>
+            <a class="collapse-item active" href="charts_2015.html">2015</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="createChar.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+          <span>Car/Years Chart</span></a>
       </li>
 
 
@@ -114,48 +137,16 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-          <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme. The charts
-            below have been customized - for further customization options, please visit the <a target="_blank"
-              href="https://www.chartjs.org/docs/latest/">official Chart.js documentation</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">2020 Charts</h1>
+
 
           <!-- Content Row -->
           <div class="row">
 
             <div class="col-xl-8 col-lg-7">
 
-              <!-- Area Chart -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
-                </div>
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
-                  <hr>
-                  Styling for the area chart can be found in the <code>/js/demo/chart-area-demo.js</code> file.
-                </div>
-              </div>
-
-              <!-- Bar Chart -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                </div>
-                <div class="card-body">
-                  <div class="chart-bar">
-                    <canvas id="myBarChart"></canvas>
-                  </div>
-                  <hr>
-                  Styling for the bar chart can be found in the <code>/js/demo/chart-bar-demo.js</code> file.
-                </div>
-              </div>
-
-            </div>
-
             <!-- Donut Chart -->
-            <div class="col-xl-4 col-lg-5">
+            <!-- <div class="col-xl-4 col-lg-5"> -->
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
@@ -171,7 +162,7 @@
 
                 </div>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
 
         </div>
@@ -184,7 +175,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Adir And Asaf 2020</span>
           </div>
         </div>
       </footer>
@@ -235,11 +226,13 @@
   <script src="vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
+  <!-- <script src="js/demo/chart-area-demo.js"></script> -->
   <!-- <script src="js/demo/chart-pie-demo.js"></script> -->
-  <script src="js/demo/chart-bar-demo.js"></script>
+  <!-- <script src="js/demo/chart-bar-demo.js"></script> -->
 
   <script type="text/javascript" src="db/CarsDb_2020.js"></script>
+
+  <script src="js/chart-pie-func.js"></script>
 
   <script>
     var carsType = [];
@@ -258,196 +251,7 @@
       }
     }
 
-    // var char_colors = [];
-    // for(var i = 0; i<carsType.length; i++) {
-    //   var bgcolorValue = padHex() + bgcolor.toString(16)  + padHex() + bgcolor.toString(16) + "ff"; 
-    //   char_colors.push(bgcolorValue);
-    // }
-    const CSS_COLOR_NAMES = [
-  "AliceBlue",
-  "AntiqueWhite",
-  "Aqua",
-  "Aquamarine",
-  "Azure",
-  "Beige",
-  "Bisque",
-  "Black",
-  "BlanchedAlmond",
-  "Blue",
-  "BlueViolet",
-  "Brown",
-  "BurlyWood",
-  "CadetBlue",
-  "Chartreuse",
-  "Chocolate",
-  "Coral",
-  "CornflowerBlue",
-  "Cornsilk",
-  "Crimson",
-  "Cyan",
-  "DarkBlue",
-  "DarkCyan",
-  "DarkGoldenRod",
-  "DarkGray",
-  "DarkGrey",
-  "DarkGreen",
-  "DarkKhaki",
-  "DarkMagenta",
-  "DarkOliveGreen",
-  "DarkOrange",
-  "DarkOrchid",
-  "DarkRed",
-  "DarkSalmon",
-  "DarkSeaGreen",
-  "DarkSlateBlue",
-  "DarkSlateGray",
-  "DarkSlateGrey",
-  "DarkTurquoise",
-  "DarkViolet",
-  "DeepPink",
-  "DeepSkyBlue",
-  "DimGray",
-  "DimGrey",
-  "DodgerBlue",
-  "FireBrick",
-  "FloralWhite",
-  "ForestGreen",
-  "Fuchsia",
-  "Gainsboro",
-  "GhostWhite",
-  "Gold",
-  "GoldenRod",
-  "Gray",
-  "Grey",
-  "Green",
-  "GreenYellow",
-  "HoneyDew",
-  "HotPink",
-  "IndianRed",
-  "Indigo",
-  "Ivory",
-  "Khaki",
-  "Lavender",
-  "LavenderBlush",
-  "LawnGreen",
-  "LemonChiffon",
-  "LightBlue",
-  "LightCoral",
-  "LightCyan",
-  "LightGoldenRodYellow",
-  "LightGray",
-  "LightGrey",
-  "LightGreen",
-  "LightPink",
-  "LightSalmon",
-  "LightSeaGreen",
-  "LightSkyBlue",
-  "LightSlateGray",
-  "LightSlateGrey",
-  "LightSteelBlue",
-  "LightYellow",
-  "Lime",
-  "LimeGreen",
-  "Linen",
-  "Magenta",
-  "Maroon",
-  "MediumAquaMarine",
-  "MediumBlue",
-  "MediumOrchid",
-  "MediumPurple",
-  "MediumSeaGreen",
-  "MediumSlateBlue",
-  "MediumSpringGreen",
-  "MediumTurquoise",
-  "MediumVioletRed",
-  "MidnightBlue",
-  "MintCream",
-  "MistyRose",
-  "Moccasin",
-  "NavajoWhite",
-  "Navy",
-  "OldLace",
-  "Olive",
-  "OliveDrab",
-  "Orange",
-  "OrangeRed",
-  "Orchid",
-  "PaleGoldenRod",
-  "PaleGreen",
-  "PaleTurquoise",
-  "PaleVioletRed",
-  "PapayaWhip",
-  "PeachPuff",
-  "Peru",
-  "Pink",
-  "Plum",
-  "PowderBlue",
-  "Purple",
-  "RebeccaPurple",
-  "Red",
-  "RosyBrown",
-  "RoyalBlue",
-  "SaddleBrown",
-  "Salmon",
-  "SandyBrown",
-  "SeaGreen",
-  "SeaShell",
-  "Sienna",
-  "Silver",
-  "SkyBlue",
-  "SlateBlue",
-  "SlateGray",
-  "SlateGrey",
-  "Snow",
-  "SpringGreen",
-  "SteelBlue",
-  "Tan",
-  "Teal",
-  "Thistle",
-  "Tomato",
-  "Turquoise",
-  "Violet",
-  "Wheat",
-  "White",
-  "WhiteSmoke",
-  "Yellow",
-  "YellowGreen",
-];
-    var ctx = document.getElementById("myPieChart");
-    var pie_chart_js = {
-      type: 'doughnut',
-      data: {
-        labels: ["Direct", "Referral", "Social"],
-        datasets: [{
-          data: [55, 30, 15],
-          backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-          hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
-          hoverBorderColor: "rgba(234, 236, 244, 1)",
-        }],
-      },
-      options: {
-        maintainAspectRatio: false,
-        tooltips: {
-          backgroundColor: "rgb(255,255,255)",
-          bodyFontColor: "#858796",
-          borderColor: '#dddfeb',
-          borderWidth: 1,
-          xPadding: 15,
-          yPadding: 15,
-          displayColors: false,
-          caretPadding: 10,
-        },
-        legend: {
-          display: false
-        },
-        cutoutPercentage: 80,
-      },
-    };
-    pie_chart_js.data.labels = carsType;
-    pie_chart_js.data.datasets[0].data = carsTypeSize;
-    pie_chart_js.data.datasets[0].backgroundColor = CSS_COLOR_NAMES;
-
-    var myPieChart = new Chart(ctx, pie_chart_js);
+    setPieChart(carsType, carsTypeSize);
   </script>
 
 </body>
